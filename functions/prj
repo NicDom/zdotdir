@@ -39,7 +39,8 @@ local projects=(
   # $project_dir/*/*/.git/..
 )
 
-if ! [[ -n $project_dir/*/*/.git ]]; then
+# add subdirectories of projects if they exist
+if [[ -n $project_dir/*/*/.git ]]; then
   projects+=($project_dir/*/*/.git/..)
 fi
 
