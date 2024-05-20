@@ -28,10 +28,10 @@ done
 if is_wsl; then
   # check if wslview is installed
   # if not, install it
-  if ! command -v wslview &> /dev/null; then
-    echo "wslview not found, pls install it"
+  if ! command -v wsl-open &> /dev/null; then
+    echo "wsl-open not found, pls install it"
   else
-    export BROWSER="${BROWSER:-wslview}"
+    export BROWSER="${BROWSER:-wsl-open}"
   fi
 fi
 
