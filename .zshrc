@@ -62,6 +62,17 @@ source $zsh_plugins
 test -f /usr/bin/keychain && eval $(/usr/bin/keychain --eval --quiet id_ed25519)
 
 #
+# fnm
+#
+
+eval $(fnm env | sed 1d)
+export PATH=$(cygpath $FNM_MULTISHELL_PATH):$PATH
+
+if [[ -f .node-version || -f .nvmrc ]]; then
+    fnm use
+fi
+
+#
 # Local
 #
 
